@@ -10,6 +10,10 @@ const pretendard = localFont({
   src: "../../public/fonts/PretendardVariable.woff2",
   variable: "--font-pretendard", weight: "100 900", display: "swap",
 });
+const jetbrains = localFont({
+  src: "../../public/fonts/JetBrainsMono-Regular.woff2",
+  variable: "--font-jetbrains", weight: "400", display: "swap",
+});
 export const metadata: Metadata = {
   title: { default: "Study Journal · 개발 공부 기록", template: "%s · Study Journal" },
   description: "배우고, 만들어 보고, 기록하는 개발 공부 노트.",
@@ -18,7 +22,7 @@ const themeScript = `(function(){var t='system';try{var s=localStorage.getItem('
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={pretendard.variable} suppressHydrationWarning>
+    <html lang="ko" className={`${pretendard.variable} ${jetbrains.variable}`} suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body>
         <a href="#main" className="skip-link">본문 바로가기</a>

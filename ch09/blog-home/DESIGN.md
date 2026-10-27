@@ -1,68 +1,72 @@
 ---
 version: alpha
-name: Study Journal
-description: 한국어 개발 공부 기록을 위한 차분하고 읽기 편한 개인 블로그
+name: Study Journal — Build Log
+description: 직접 만들고 실험하며 배운 과정을 기록하는 한국어 개발 블로그
 colors:
-  primary: "#35624A"
-  primary-hover: "#284D3A"
-  on-primary: "#FFFFFF"
-  background: "#F7F6F2"
+  primary: "#F2D34F"
+  primary-hover: "#E4C43C"
+  on-primary: "#202020"
+  background: "#FFFDF5"
   surface: "#FFFFFF"
-  foreground: "#242824"
-  secondary: "#626960"
-  subtle: "#ECEFE8"
-  border: "#D9DED5"
-  control-border: "#858D82"
-  focus: "#35624A"
-  danger: "#A33C32"
-  dark-primary: "#9AC7A5"
-  dark-primary-hover: "#B6DABD"
-  dark-on-primary: "#171B18"
-  dark-background: "#171B18"
-  dark-surface: "#202621"
-  dark-foreground: "#E5E9E2"
-  dark-secondary: "#ADB7AA"
-  dark-subtle: "#2B342C"
-  dark-border: "#3D483D"
-  dark-control-border: "#778574"
-  dark-focus: "#9AC7A5"
-  dark-danger: "#F2A399"
+  foreground: "#202020"
+  secondary: "#595959"
+  subtle: "#F0EEE6"
+  border: "#202020"
+  control-border: "#202020"
+  link: "#2448B1"
+  link-hover: "#193582"
+  focus: "#2448B1"
+  danger: "#A12B25"
+  dark-primary: "#F2D34F"
+  dark-primary-hover: "#E4C43C"
+  dark-on-primary: "#202020"
+  dark-background: "#191919"
+  dark-surface: "#252525"
+  dark-foreground: "#F5F3EB"
+  dark-secondary: "#BDBBB3"
+  dark-subtle: "#303030"
+  dark-border: "#A6A49D"
+  dark-control-border: "#A6A49D"
+  dark-link: "#A9BDFF"
+  dark-link-hover: "#CCD8FF"
+  dark-focus: "#A9BDFF"
+  dark-danger: "#FFB4AB"
 typography:
   h1:
     fontFamily: Pretendard Variable
-    fontSize: 36px
-    fontWeight: 700
-    lineHeight: 1.35
+    fontSize: 48px
+    fontWeight: 800
+    lineHeight: 1.2
     letterSpacing: -0.02em
   h1-mobile:
     fontFamily: Pretendard Variable
-    fontSize: 28px
-    fontWeight: 700
-    lineHeight: 1.4
+    fontSize: 32px
+    fontWeight: 800
+    lineHeight: 1.3
     letterSpacing: -0.02em
   h2:
     fontFamily: Pretendard Variable
     fontSize: 24px
-    fontWeight: 600
-    lineHeight: 1.45
+    fontWeight: 700
+    lineHeight: 1.4
     letterSpacing: -0.01em
   post-title:
     fontFamily: Pretendard Variable
-    fontSize: 22px
-    fontWeight: 600
-    lineHeight: 1.5
+    fontSize: 26px
+    fontWeight: 700
+    lineHeight: 1.4
     letterSpacing: -0.01em
   post-title-mobile:
     fontFamily: Pretendard Variable
-    fontSize: 20px
-    fontWeight: 600
-    lineHeight: 1.5
+    fontSize: 22px
+    fontWeight: 700
+    lineHeight: 1.45
     letterSpacing: -0.01em
   body:
     fontFamily: Pretendard Variable
     fontSize: 18px
     fontWeight: 400
-    lineHeight: 1.75
+    lineHeight: 1.8
     letterSpacing: 0em
   summary:
     fontFamily: Pretendard Variable
@@ -73,11 +77,11 @@ typography:
   label:
     fontFamily: Pretendard Variable
     fontSize: 14px
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: 1.5
     letterSpacing: 0em
   metadata:
-    fontFamily: Pretendard Variable
+    fontFamily: JetBrains Mono
     fontSize: 14px
     fontWeight: 400
     lineHeight: 1.6
@@ -89,18 +93,19 @@ typography:
     lineHeight: 1.7
     letterSpacing: 0em
 rounded:
-  sm: 4px
-  md: 8px
+  sm: 0px
+  md: 0px
 spacing:
   xs: 4px
   sm: 8px
+  compact: 12px
   md: 16px
   lg: 24px
   xl: 32px
   section: 48px
   section-desktop: 64px
-  container: 960px
-  reading: 680px
+  container: 1080px
+  reading: 720px
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
@@ -111,12 +116,21 @@ components:
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
     textColor: "{colors.on-primary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: 12px 16px
   button-primary-dark:
     backgroundColor: "{colors.dark-primary}"
     textColor: "{colors.dark-on-primary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: 12px 16px
   button-primary-dark-hover:
     backgroundColor: "{colors.dark-primary-hover}"
     textColor: "{colors.dark-on-primary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: 12px 16px
   search-input:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.foreground}"
@@ -126,6 +140,9 @@ components:
   search-input-dark:
     backgroundColor: "{colors.dark-surface}"
     textColor: "{colors.dark-foreground}"
+    typography: "{typography.summary}"
+    rounded: "{rounded.sm}"
+    padding: 12px 16px
   tag:
     backgroundColor: "{colors.subtle}"
     textColor: "{colors.secondary}"
@@ -135,130 +152,178 @@ components:
   tag-dark:
     backgroundColor: "{colors.dark-subtle}"
     textColor: "{colors.dark-secondary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: 4px 8px
+  record-type:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: 4px 8px
+  record-type-dark:
+    backgroundColor: "{colors.dark-primary}"
+    textColor: "{colors.dark-on-primary}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: 4px 8px
 ---
 
 ## Overview
 
-**추천 방향: 종이 위에 차곡차곡 쌓이는 개발 학습 노트.** 한국어 독자가 최근 기록을 훑고 관심 있는 글을 읽도록, 글 제목·요약·날짜가 시각적 중심이 된다. 따뜻한 종이색, 먹색 글자, 절제된 녹색으로 차분한 인상을 만든다. 개인 블로그의 정체성은 짧은 소개와 실제 기록에서 드러낸다.
+**선택 방향: 빌드 로그 — 만들고, 막히고, 해결하며 쌓는 개발 기록.** 학습·개발 기록 블로그라는 목적과 Study Journal 이름은 유지한다. 굵은 제목, 각진 블록, 선명한 경계, 노란 강조 면과 파란 링크로 작업 일지의 개성을 만든다. 독자가 무엇을 시도했고 배웠는지 먼저 파악하도록 한다.
 
-검토한 방향은 세 가지다. 이미지 중심 매거진은 시각적 개성이 강하지만 텍스트 기록을 탐색하는 데 썸네일이 방해될 수 있다. 조밀한 문서형 아카이브는 검색에 유리하지만 홈이 업무 도구처럼 느껴질 수 있다. **여백 있는 편집형 목록**은 최신 기록의 발견과 한국어 가독성을 함께 확보하므로 추천한다.
+UI UX Pro Max의 `brutalism` 자료에서 기술 블로그에 적합한 굵은 글자·0px 모서리·2~4px 경계·즉시 상태 전환을 채택했다. 일반 생성 결과의 FAQ 구성과 OLED 테마는 목적에 맞지 않아 채택하지 않았다. 한국어 글꼴·색상값·읽기 폭·기록 유형은 프로젝트에 맞춰 정의했다.
 
-`ui-ux-pro-max` 검색에서 나온 Swiss Modernism 2.0의 정렬·간격·명확한 위계만 참고했다. 재검색에서도 스크롤 스토리텔링과 영문 중심 글꼴이 반환되어 이 부분은 제품에 맞는 검증된 추천으로 채택하지 않았다. 아래 색상·한국어 글꼴·목록 구성은 사용자의 요구와 스킬의 가독성 원칙을 바탕으로 별도 제안한 값이다.
-
-이 문서는 디자인 제안이다. 홈 화면, 컴포넌트, 테마 동작을 아직 구현하지 않는다. 형식은 [google-labs-code/design.md 사양](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md)의 YAML 토큰과 Markdown 설명 구조를 따른다.
+기존 YAML 토큰 + Markdown 설명 형식을 유지하는 향후 구현 기준이다. 현재 화면이 이미 이 규칙을 따른다는 의미는 아니다. 이번에는 DESIGN.md만 수정하며 실제 화면·데이터·글꼴·의존성은 후속 구현 대상이다.
 
 ## Colors
 
-색은 역할에 연결한다. YAML의 기본 토큰은 라이트 모드이고, `dark-` 토큰은 같은 역할의 다크 모드 값이다. 구현 시 하나의 의미 토큰에 두 모드를 매핑한다. 컴포넌트마다 임의의 hex를 추가하지 않는다.
+기본 토큰은 라이트, `dark-` 토큰은 같은 역할의 다크 값이다. 구현 시 역할별 의미 토큰에 연결한다. Primary는 노란 강조 면, Link는 파란 텍스트 링크다.
 
 | 역할 | Light | Dark | 적용 |
 |---|---|---|---|
-| Background | `#F7F6F2` | `#171B18` | 페이지 바탕 |
-| Surface | `#FFFFFF` | `#202621` | 입력창·열린 메뉴·코드 영역 |
-| Foreground | `#242824` | `#E5E9E2` | 제목·본문·주요 아이콘 |
-| Secondary | `#626960` | `#ADB7AA` | 요약·날짜·읽기 시간·placeholder |
-| Primary | `#35624A` | `#9AC7A5` | 링크·선택 상태·주요 버튼 |
-| Primary hover | `#284D3A` | `#B6DABD` | 링크 및 주요 버튼 hover·pressed |
-| On primary | `#FFFFFF` | `#171B18` | 주요 버튼 안의 글자 |
-| Subtle | `#ECEFE8` | `#2B342C` | 태그·목록 hover 바탕 |
-| Border | `#D9DED5` | `#3D483D` | 장식적 구분선 |
-| Control border | `#858D82` | `#778574` | 입력창·버튼의 식별에 필요한 경계 |
-| Focus | `#35624A` | `#9AC7A5` | 키보드 포커스 링 |
-| Danger | `#A33C32` | `#F2A399` | 오류 메시지; 원인과 복구 방법을 함께 표시 |
+| Background | #FFFDF5 | #191919 | 페이지 바탕 |
+| Surface | #FFFFFF | #252525 | 글 블록·입력창·메뉴·코드 |
+| Foreground | #202020 | #F5F3EB | 제목·본문·아이콘 |
+| Secondary | #595959 | #BDBBB3 | 요약·날짜·읽기 시간·placeholder |
+| Primary | #F2D34F | #F2D34F | 주요 버튼·기록 유형·선택 면 |
+| Primary hover | #E4C43C | #E4C43C | 노란 면 hover·pressed |
+| On primary | #202020 | #202020 | 노란 면 위 글자·아이콘·경계 |
+| Subtle | #F0EEE6 | #303030 | 보조 태그·비활성 면 |
+| Border / Control border | #202020 | #A6A49D | 구조·버튼·입력창 경계 |
+| Link / Focus | #2448B1 | #A9BDFF | 링크·포커스 |
+| Link hover | #193582 | #CCD8FF | 링크 hover·pressed |
+| Danger | #A12B25 | #FFB4AB | 오류 문구·경계 |
 
-다크 모드는 색상을 반전하지 않고 녹색 기운의 짙은 중립색과 밝은 저채도 강조색을 사용한다. 최초 방문은 OS 설정을 따르고, 테마 선택은 **시스템 / 라이트 / 다크** 세 가지로 제공한다. 사용자의 명시 선택을 저장하고 이후 방문에도 유지한다. 첫 화면의 테마 깜빡임을 피한다.
+노란 면은 주요 행동과 기록 유형에 제한한다. 밝은 배경 위 노란 글자는 사용하지 않는다. 노란 면 위에서는 두 테마 모두 On primary 글자와 경계를 사용한다. 해당 면의 링크도 On primary와 밑줄을 사용한다. 노란 면 위 포커스 링 역시 On primary로 지정한다.
 
-계산 검증: WCAG 상대 휘도 식으로 불투명 hex 쌍을 계산했다. 아래 값은 토큰의 대비 결과이며 실제 화면의 접근성 검수 결과는 아니다.
+불투명 hex의 상대 휘도로 계산한 대비다. 실제 화면 검수 결과는 아니다.
 
-| 조합 | Light 대비 | Dark 대비 |
-|---|---:|---:|
-| Foreground / Background | 13.83:1 | 14.16:1 |
-| Secondary / Background | 5.24:1 | 8.40:1 |
-| Secondary / Surface | 5.66:1 | 7.45:1 |
-| Primary / Background | 6.48:1 | 9.19:1 |
-| Primary / Surface | 7.01:1 | 8.15:1 |
-| On primary / Primary | 7.01:1 | 9.19:1 |
-| On primary / Primary hover | 9.49:1 | 11.40:1 |
-| Control border / Surface | 3.43:1 | 3.96:1 |
+| 조합 | 대비 |
+|---|---:|
+| Light Foreground / Background | 16.00:1 |
+| Light Secondary / Background | 6.88:1 |
+| Light Link / Background | 7.82:1 |
+| On primary / Primary (공통) | 11.02:1 |
+| Dark Foreground / Background | 15.83:1 |
+| Dark Secondary / Surface | 7.97:1 |
+| Dark Link / Surface | 8.33:1 |
+| Light Control border / Surface | 16.29:1 |
+| Dark Control border / Surface | 6.14:1 |
+| Light Danger / Surface | 7.27:1 |
+| Dark Danger / Surface | 9.03:1 |
 
-일반 텍스트는 최소 4.5:1, 의미 있는 컨트롤 경계와 포커스는 최소 3:1을 유지한다. 장식적 Border는 입력창 식별이나 선택 상태의 유일한 단서로 사용하지 않는다.
+모든 실제 텍스트 조합은 최소 4.5:1, 컨트롤 경계·포커스는 인접 배경 대비 최소 3:1로 검수한다. 투명도·색상 혼합을 추가하면 재계산한다. 테마는 시스템/라이트/다크로 제공하고 첫 방문은 OS 설정을 따른다. 명시 선택을 저장하고 시스템 선택 중 OS 변화도 반영한다. 초기 깜빡임을 방지하며 저장 불가 환경에서도 읽기와 선택은 가능해야 한다.
 
 ## Typography
 
-한국어 제목과 본문은 **Pretendard Variable**, 코드와 영문 식별자는 **JetBrains Mono**를 사용한다. [Pretendard 공식 저장소](https://github.com/orioncactus/pretendard)와 [JetBrains Mono 공식 저장소](https://github.com/JetBrains/JetBrainsMono)를 글꼴 출처로 삼는다. 영문 글꼴만 지정한 뒤 한글이 우연히 다른 글꼴로 표시되는 조합을 피한다.
+한국어 제목·본문은 Pretendard Variable, 코드·영문 기술 식별자·날짜 숫자·영구 글 번호는 JetBrains Mono를 사용한다. `분 읽기`와 한국어 라벨은 Pretendard다. 본문 전체를 고정폭으로 바꾸지 않는다.
 
-기본 fallback: `"Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif`. 코드 fallback: `"JetBrains Mono", "SFMono-Regular", Consolas, "Pretendard Variable", monospace`. 한글 주석은 한국어 글꼴로 대체될 수 있으므로 코드 칸 정렬을 한글 글자 폭에 의존하지 않는다.
+| 역할 | Desktop / Mobile | 굵기 | 행간 | 자간 |
+|---|---|---:|---|---|
+| H1 | 48 / 32px | 800 | 1.2 / 1.3 | -0.02em |
+| H2 | 24 / 24px | 700 | 1.4 | -0.01em |
+| 글 제목 | 26 / 22px | 700 | 1.4 / 1.45 | -0.01em |
+| 본문·소개 | 18 / 18px | 400 | 1.8 | 0 |
+| 요약·입력 | 16 / 16px | 400 | 1.7 | 0 |
+| 버튼·필터·태그 | 14 / 14px | 600 | 1.5 | 0 |
+| 날짜·번호 | 14 / 14px | 400 | 1.6 | 0 |
+| 코드 | 15 / 15px | 400 | 1.7 | 0 |
 
-| 역할 | 글꼴 | Desktop / Mobile 크기 | 굵기 | 행간 |
-|---|---|---|---:|---:|
-| 홈 제목 H1 | Pretendard Variable | 36px / 28px | 700 | 1.35 / 1.4 |
-| 섹션 제목 H2 | Pretendard Variable | 24px / 24px | 600 | 1.45 |
-| 글 제목 | Pretendard Variable | 22px / 20px | 600 | 1.5 |
-| 긴 본문·소개 | Pretendard Variable | 18px / 18px | 400 | 1.75 |
-| 글 요약·입력창 | Pretendard Variable | 16px / 16px | 400 | 1.7 |
-| 탐색·버튼·태그 | Pretendard Variable | 14px / 14px | 500 | 1.5 |
-| 날짜·읽기 시간 | Pretendard Variable | 14px / 14px | 400 | 1.6 |
-| 코드 | JetBrains Mono | 15px / 15px | 400 | 1.7 |
+기본 루트 16px 기준이며 구현에서는 rem으로 변환한다. H1은 3rem/2rem, 본문은 1.125rem이다. 한글은 어절 단위로 줄바꿈하고 긴 URL·식별자에는 별도 감싸기 규칙을 둔다. 제목·요약은 말줄임과 줄 수 제한 없이 표시하며 모바일에서도 본문 크기를 줄이지 않는다.
 
-크기는 기본 루트 16px 기준의 값이다. 구현할 때 rem으로 변환해 사용자 글자 크기 설정을 존중한다. 본문 자간은 0, 제목만 -0.01em~-0.02em을 사용한다. 한글은 어절 단위 줄바꿈을 우선하고 긴 URL·식별자에는 별도 줄바꿈 규칙을 적용한다. 제목은 말줄임 없이 자연스럽게 여러 줄로 표시한다. 날짜는 `2026.10.04`, 읽기 시간은 `5분 읽기`처럼 한국어 문맥에 맞춘다.
+본문 fallback은 `"Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif`, 코드 fallback은 `"JetBrains Mono", "SFMono-Regular", Consolas, "Pretendard Variable", monospace`다. 글꼴은 로컬 제공하고 로딩 중 대체 글꼴로 읽을 수 있게 한다. 날짜는 `2026.10.04`, 읽기 시간은 `5분 읽기`로 표시한다.
 
-폰트는 필요한 글리프·굵기를 중심으로 로컬 제공하고 로딩 중에도 fallback으로 읽을 수 있어야 한다. 실제 파일 용량과 대체 글꼴의 줄바꿈을 확인하고, 폰트 로딩에 따른 위치 변화를 구현 단계에서 검수한다.
+## Spacing
+
+간격 체계는 **4 / 8 / 12 / 16 / 24 / 32 / 48 / 64px**다.
+
+| 관계 | Mobile | Desktop (768px 이상) |
+|---|---:|---:|
+| 페이지 좌우 패딩 | 20px | 32px |
+| 페이지 상하 패딩 | 32px | 48px |
+| 주요 섹션 사이 | 48px | 64px |
+| 글 블록 내부 패딩 | 16px | 24px |
+| 글 블록 사이 | 24px | 24px |
+| 제목 → 요약 | 8px | 8px |
+| 요약 → 메타데이터 | 12px | 12px |
+| 메타데이터 → 태그 | 12px | 12px |
+| 버튼·필터 사이 | 8px 이상 | 8px 이상 |
+
+모서리는 버튼·입력창·태그·메뉴·코드 모두 0px, 그림자는 0이다. 글 블록·컨트롤은 2px 실선, 헤더와 큰 섹션의 시작은 4px 실선, 블록 내부 보조 구분선은 1px 실선이다. 인접 경계를 중복해 두 배 두께로 만들지 않는다.
 
 ## Layout
 
-- 홈 전체는 중앙 정렬, 최대 폭 **960px**. 글 목록과 소개의 읽기 열은 최대 **680px**이며 같은 왼쪽 기준선에 정렬한다. 넓은 화면에서도 글 목록은 한 열을 유지한다.
-- **768px 미만:** 좌우 여백 20px, 상단·하단 여백 32px, 섹션 사이 48px. **768px 이상:** 좌우 여백 32px, 상단·하단 여백 48px, 섹션 사이 64px. 컨테이너는 가용 폭 안에서 유동적으로 줄어든다.
-- 간격은 **4 / 8 / 16 / 24 / 32 / 48 / 64px**. 제목과 요약 8px, 요약과 메타데이터 12px(4px 단위 예외), 글 항목의 위아래 여백 각 24px.
-- 순서: **헤더 → 짧은 소개 → 최근 글 제목과 검색·주제 필터 → 최신순 글 목록 → 페이지 탐색 → 푸터**. 소개는 2~3줄로 제한해 첫 화면에서 글 목록 시작이 보이도록 한다.
-- 헤더는 이름·워드마크, `글 / 소개`, 테마 선택으로 구성한다. 모바일에서는 두 줄로 재배치하며 가로 스크롤을 만들지 않는다. 기본은 일반 문서 흐름의 헤더다.
-- 한국어 본문은 데스크톱에서 대략 30~40자 폭을 출발점으로 실제 글로 조정한다. 영문 기준의 65~75자를 한글에 그대로 적용하지 않는다. 모바일은 글자 크기를 줄이지 않고 화면 폭에 맞춰 줄바꿈한다.
-- 목록은 얇은 구분선과 여백으로 구획하고 기본 그림자는 없다. 입력창·메뉴는 4px, 코드 영역은 8px 모서리 반경을 사용한다. 둥근 대형 카드가 전체 구조를 지배하지 않게 한다.
-- 375 / 768 / 1024 / 1440px, 가로 방향, 200% 확대에서 글·탐색 요소의 겹침과 가로 넘침을 구현 후 확인한다. 코드 블록에만 필요할 때 내부 가로 스크롤을 허용한다.
+- 전체 셸은 패딩 포함 최대 1080px, 너비 100%, border-box 기준 중앙 정렬이다. 소개와 긴 본문은 최대 720px다. 본문은 한국어 약 30~40자 폭에서 실제 글로 검수한다.
+- 홈 순서는 헤더 → 짧은 소개 → 기록 제목·검색·유형 필터 → 최신순 글 목록 → 페이지 탐색 → 주제 탐색 → 푸터다. 대형 히어로나 통계 대시보드는 사용하지 않는다.
+- 목록은 모든 화면에서 한 열이다. 1024px 이상에서는 블록 내부만 `128px 기록 정보 열 + 24px 간격 + 나머지 본문 열`로 나눈다. 정보 열에는 번호·날짜·유형, 본문 열에는 제목·요약·읽기 시간·주제를 배치한다.
+- 1024px 미만에서는 기록 정보를 제목 위로 옮긴다. DOM 읽기 순서도 기록 정보 → 제목 → 요약 → 읽기 시간 → 주제로 유지한다.
+- 글 상세는 720px 읽기 열이다. 내용에 있을 때만 시도한 것/막힌 점/해결 과정/배운 점 구획을 둔다. 없는 결과를 만들지 않는다.
+- 실제 작업을 설명할 때만 코드·이미지를 사용한다. 홈 미리보기는 글당 하나 이하, 코드 6줄 이내와 전체 글 링크를 제공한다. 요약을 이미지로 대체하지 않는다.
 
 ## Components
 
-| 컴포넌트 | 시각 및 동작 규칙 |
+| 컴포넌트 | 시각·동작 기준 |
 |---|---|
-| 헤더·탐색 | 이름 18px/600, 탐색 14px/500. 현재 위치는 녹색 글자와 밑줄로 표시. 홈 H1과 별개로 이름은 홈 링크다. |
-| 소개 | H1 하나와 18px 본문. 학습 주제와 기록 목적을 짧게 전달. 거대한 광고형 히어로는 사용하지 않는다. |
-| 글 목록 항목 | 제목 → 1~2문장 요약 → 날짜·읽기 시간·태그 순서. 최신순. 제목은 실제 링크, 태그 링크는 별도 요소로 두며 링크를 중첩하지 않는다. 요약은 저자가 짧게 작성하고 작은 화면에서는 자연스럽게 늘어난다. |
-| 텍스트 링크 | 본문 링크는 항상 밑줄. 목록 제목은 Foreground, hover·focus 시 Primary와 밑줄. 색만으로 클릭 가능성을 표현하지 않는다. |
-| 검색 | 항상 보이는 `글 검색` 라벨, 16px 입력 글자, 높이 최소 44px, Control border 1px, 모서리 4px. placeholder는 `제목이나 키워드 검색`. 입력을 지워 복구할 수 있게 한다. |
-| 주제 필터·태그 | 필터는 버튼, 글의 주제 태그는 주제 페이지 링크. 필터는 여러 줄로 감싸고 선택 시 Primary 테두리와 체크·선택 상태를 함께 제공. 비대화형 태그에는 버튼처럼 보이는 hover를 넣지 않는다. |
-| 버튼 | 필요할 때만 Primary 채움 버튼. 보조 버튼은 Surface 바탕·Foreground 글자·Control border 1px. 높이 최소 44px, 버튼 사이 8px 이상. 글 목록 탐색보다 버튼의 시각적 무게가 커지지 않게 한다. |
-| 테마 선택 | `화면 테마`라는 접근 가능한 이름을 가진 선택 컨트롤. `시스템 / 라이트 / 다크`와 현재 선택을 표시. 아이콘만으로 모드를 구분하지 않는다. |
-| 페이지 탐색 | 목록 아래 `이전 / 다음`과 현재 페이지. 작동 불가 항목은 의미적으로 비활성화. 필터·검색 상태를 보존. 무한 스크롤 대신 독자가 위치를 파악할 수 있는 탐색을 우선한다. |
-| 빈 상태·오류 | 검색 결과가 없으면 `검색 결과가 없습니다`와 `검색 초기화`. 글이 없으면 `첫 기록을 준비하고 있습니다`. 오류는 메시지와 다시 시도 동작을 제공하고 Danger 색만으로 전달하지 않는다. |
-| 코드 미리보기 | 필요한 글에서만 사용. Surface 바탕, Foreground 코드, 8px 반경, 16px 패딩. 홈에 장식용 터미널을 배치하지 않는다. |
-| 푸터 | 14px Secondary, 상단 구분선, 32px 위 여백. 저자·RSS·GitHub처럼 실제로 제공하는 정보와 링크만 표시. |
+| 헤더·탐색 | 워드마크 20px/800, 메뉴 14px/600. 홈 링크·글/소개·테마 선택. 4px 하단 경계, 일반 문서 흐름. 현재 메뉴는 밑줄과 aria-current. |
+| 소개 | H1 하나와 짧은 18px 소개. 고정 높이·강제 줄 수 제한 없음. 노란 라벨은 하나까지만 사용. |
+| 글 블록 | Surface·2px Border·0px 반경·그림자 없음. 제목은 항상 밑줄이 있는 링크. 블록 전체를 링크로 감싸거나 태그 링크를 중첩하지 않음. |
+| 기록 유형 | 실험/문제 해결/회고/학습 노트 중 실제 데이터의 대표 유형 하나. Primary·On primary·2px On primary 경계. 데이터가 없으면 생략하며 추측하지 않음. 비대화형 라벨에는 hover·포커스 없음. |
+| 글 번호·날짜 | 실제 영구 번호가 있을 때만 번호 표시. 필터·페이지 변경으로 재번호화하지 않음. 날짜에는 기계 판독 값도 제공. |
+| 링크 | Link와 항상 밑줄. hover·pressed는 Link hover, focus는 공통 링. 노란 면에서는 On primary. |
+| 검색 | 항상 보이는 글 검색 라벨, 제목이나 키워드 검색 placeholder. 16px 입력, 2px Control border, 12px 16px 패딩. 제목·요약·주제 태그 검색, 지우기·초기화 제공. |
+| 유형 필터 | 전체와 실제 데이터가 있는 유형의 단일 선택 버튼 그룹. 선택은 노란 면·체크·aria-pressed로 표현. 줄바꿈 허용. |
+| 주제 태그 | Subtle·Secondary·1px 경계. 링크는 주제 필터가 적용된 홈으로 이동하며 밑줄과 최소 44px 영역 제공. 비대화형 태그에는 밑줄·hover 없음. |
+| 주요 버튼 | Primary/On primary·2px On primary 경계·0px 반경. 영역당 주요 행동 하나. hover·pressed는 Primary hover. |
+| 보조 버튼 | Surface/Foreground·2px Control border. hover·pressed는 Subtle. disabled는 Subtle/Secondary와 실제 비활성 상태, opacity로 흐리지 않음. |
+| 테마 선택 | 화면 테마 라벨과 시스템/라이트/다크. 현재 선택을 텍스트로 표시하고 네이티브 키보드 동작 보존. |
+| 페이지 탐색 | 페이지당 최대 8개, 이전/다음·현재/전체 페이지. 검색·유형·주제를 URL에 보존. 조건 변경은 첫 페이지로 복귀. 이동 불가 버튼은 실제 비활성화. |
+| 빈 상태·오류 | 검색 결과가 없습니다와 조건 초기화, 글 없음은 첫 기록을 준비하고 있습니다. 오류는 원인·복구 행동을 문구로 제공. 결과 수 변경은 정중한 라이브 알림, 포커스 이동 없음. |
+| 코드·이미지 | Surface/Foreground·2px Border·16px 패딩·0px 반경. 구문 색은 대비 검증 후 추가. 이미지는 비율 확보·대체 텍스트·설명 제공. |
+| 푸터 | 2px 상단 경계·32px 내부 위 패딩·14px Secondary. 실제 정보와 링크만 표시. |
 
-공통 상태: 포커스 링은 **2px 실선 Focus + 3px 바깥 여백**. hover 배경은 Subtle, pressed는 Primary hover 또는 같은 색의 테두리 강조를 사용한다. disabled는 Secondary 글자와 Subtle 바탕, 동작 금지 및 의미 상태를 함께 적용하며 투명도로 글자를 흐리지 않는다.
+검색·유형·주제는 함께 적용하고 현재 조건과 개별 해제를 제공한다. 후속 구현 전에는 작동하지 않는 컨트롤을 장식으로 노출하지 않는다.
 
-대화형 컨트롤은 최소 **44×44 CSS px**의 영역을 확보한다(본문 인라인 링크 제외). 아이콘이 필요하면 프로젝트에 있는 **Lucide**의 선형 SVG를 **18px 또는 20px, stroke 1.75px**로 통일한다. 텍스트 옆 장식 아이콘은 스크린리더에서 숨기고 아이콘 버튼에는 이름을 제공한다.
+## Responsive
 
-모션은 hover·pressed 색상 변화 **120ms ease-out**, 메뉴 표시 **160ms ease-out** 정도만 허용한다. 포커스는 즉시 표시하며 글은 애니메이션 완료를 기다리지 않고 읽을 수 있어야 한다. `prefers-reduced-motion`에서는 전환을 제거한다. 스크롤 등장·패럴랙스·카드 확대는 사용하지 않는다.
+| 구간 | 배치 |
+|---|---|
+| 768px 미만 | 헤더 첫 줄 워드마크, 다음 줄 메뉴·테마. 줄바꿈 허용. H1 32px, 글 제목 22px. 검색·필터 세로, 정보는 제목 위. |
+| 768~1023px | 헤더는 가용 폭에 따라 한 줄 또는 줄바꿈. H1 48px, 글 제목 26px. 검색·필터는 공간이 있을 때 나란히, 블록 내부는 한 열. |
+| 1024px 이상 | 헤더 한 줄, 블록 내부 정보/본문 두 열. 전체 1080px·긴 본문 720px 상한 유지. |
+
+320/375/768/1024/1440px와 가로 방향, 200% 글자 확대와 400% 브라우저 확대에서 손실 없이 재배치한다. 페이지 전체 가로 스크롤은 금지하고 코드·표에만 필요한 내부 스크롤을 허용한다. 해당 영역은 키보드 접근이 가능해야 한다. 필터·태그는 줄바꿈하며 긴 한국어 라벨을 자르지 않는다.
+
+## Accessibility
+
+- 텍스트 최소 4.5:1, 컨트롤 경계·포커스 최소 3:1. 색상만으로 선택·오류·링크를 표현하지 않는다.
+- 버튼·입력·선택·대화형 태그는 최소 44×44 CSS px. 본문 인라인 링크는 예외이며 주변 링크와 구별 가능한 간격을 둔다.
+- 포커스는 2px 실선 Focus + 3px 바깥 여백으로 즉시 표시한다. 노란 면 위 링은 On primary. overflow로 자르거나 다른 요소로 가리지 않는다.
+- 본문 바로가기, header/nav/main/footer, H1 하나와 H2→H3 위계를 제공한다. 키보드 순서는 읽기 순서와 일치한다.
+- 선택은 체크·텍스트·의미 상태를 함께 제공한다. 오류는 입력과 연결하고 원인·복구 방법을 설명한다. 비활성 링크에 작동하는 href를 남기지 않는다.
+- 아이콘은 Lucide 선형 SVG 20px·stroke 2px로 통일한다. 장식은 보조 기술에서 숨기고 단독 버튼에는 접근 가능한 이름을 제공한다.
+- 코드 복사 같은 동작을 추가하면 결과를 라이브 알림으로 제공한다. hover에 필수 기능을 숨기거나 포커스를 자동 이동하지 않는다.
+
+## Motion
+
+기본 모션은 **0ms**, transition·animation 없음이다. hover·pressed·선택은 색·밑줄·경계 색만 즉시 바꾼다. 두께·위치·크기 변경으로 레이아웃을 흔들지 않는다. 메뉴·검색 결과·테마는 즉시 표시하고 네이티브 컨트롤의 OS 동작은 존중한다.
+
+자동 타이핑·깜빡이는 커서·스크롤 등장·패럴랙스·캐러셀·카드 확대·강제 부드러운 스크롤은 사용하지 않는다. prefers-reduced-motion에서도 전환·애니메이션 없음과 기본 스크롤을 유지한다. 로딩은 정적 문구로 알리고 읽기를 지연시키지 않는다.
 
 ## Do's and Don'ts
 
 ### Do's
 
-- 실제 글 제목과 한국어 문단으로 길이·줄바꿈·정보 위계를 판단한다.
-- 제목, 요약, 날짜를 먼저 읽게 하고 여백과 굵기로 중요도를 구분한다.
-- 라이트·다크의 색 역할을 일치시키고 모든 상태의 대비를 각각 확인한다.
-- 키보드 탐색, 본문 바로가기, 순서 있는 제목 구조, 명확한 링크 이름을 제공한다.
-- 글자 확대와 줄바꿈을 허용하고 검색·필터·테마 선택을 키보드로 사용할 수 있게 한다.
-- 구현 후 대비, 작은 화면, 확대, reduced motion, 폰트 로딩을 검수한다. 현재 검증은 토큰 대비 계산에 한정된다.
+- 실제 한국어 제목·긴 기술명·결과 이미지로 줄바꿈과 위계를 확인한다.
+- 무엇을 시도하고 배웠는지 제목·요약으로 먼저 전달한다.
+- 노란 강조 면·파란 링크·선명한 경계의 역할을 유지한다.
+- 후속 구현에서 양 테마의 기본/hover/pressed/focus/disabled/오류, 키보드·확대·반응형·폰트 로딩을 검수한다. 현재 검증은 토큰 대비 계산이다.
 
 ### Don'ts
 
-- **보라·파랑 그라데이션, 오로라 배경, 빛나는 테두리, 네온 포인트**로 흔한 AI 서비스 분위기를 만들지 않는다.
-- **반투명 유리 카드, 과도한 blur, 떠다니는 구체, 무의미한 3D 장식, bento 카드의 반복**을 사용하지 않는다.
-- 모든 글에 획일적인 AI 생성 썸네일을 붙이거나 필요 없는 이미지를 넣지 않는다.
-- 전체 화면을 차지하는 히어로, 그라데이션 제목, 과장된 홍보 문구로 최신 글을 아래로 밀지 않는다.
-- 보조 정보를 저대비 회색·12px 이하 글자에 숨기지 않는다. 흰색·검은색으로 테마를 단순 반전하지 않는다.
-- 한글 본문에 영문 장식 서체, 과도한 음수 자간, 양쪽 정렬, 강제 글자 단위 줄바꿈을 적용하지 않는다.
-- 긴 제목을 한 줄 말줄임으로 잘라 내용을 숨기거나 좁은 화면에서 글자를 축소하지 않는다.
-- hover에만 필요한 기능을 숨기거나, 포커스 링을 제거하거나, 색상만으로 선택·오류를 표현하지 않는다.
-- 이모지를 탐색 아이콘으로 쓰거나, 아이콘 스타일·모서리 반경·그림자를 임의로 섞지 않는다.
-- 자동 캐러셀, 읽기를 방해하는 등장 효과, 커서 추적 효과, 스크롤 강제 제어를 넣지 않는다.
-- 글 목록과 경쟁하는 구독 팝업·상시 떠 있는 CTA·불필요한 통계 카드를 배치하지 않는다.
+- 장식용 가짜 번호·유형·실험 결과·통계·터미널 출력을 만들지 않는다.
+- 본문 전체를 볼드·고정폭·좁은 행간으로 만들지 않는다.
+- 유리 카드·그라데이션·네온·blur·둥근 카드·과도한 그림자를 혼합하지 않는다.
+- 불필요한 썸네일·대형 히어로·팝업으로 글 탐색을 밀어내지 않는다.
+- 제목 말줄임·강제 글자 단위 줄바꿈·작은 모바일 본문·색만의 상태 표현을 사용하지 않는다.
